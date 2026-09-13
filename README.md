@@ -1,12 +1,16 @@
 # Throttle
 
-Windows tray app to track usage/credits for:
+<img src=".github/app.png" align="right" width="260" alt="Throttle app screenshot">
+
+Tray app for tracking usage and credits across your AI API providers.
 
 - **OpenRouter** — used/available credits
 - **ElevenLabs** — used/available characters
 - **Claude Code** — session (5h) and weekly usage %
 
 Click the tray icon to open the panel; click outside (or the ✕ button) to close it.
+
+<br clear="right">
 
 ## Running in development
 
