@@ -37,10 +37,8 @@ struct RateLimitCache {
     seven_day: Option<RateLimitWindow>,
 }
 
-/// Returns the window's usage percentage, treating it as 0 (fresh window,
-/// no data yet) if `resets_at` has already passed — the statusline only
-/// updates while Claude Code is actively running, so a cached percentage
-/// can be stale leftover from just before the window reset.
+/// Zeroes out a percentage past its reset time, since the cache only
+/// refreshes while Claude Code is running and can otherwise stay stale.
 fn effective_pct(window: &RateLimitWindow, now: i64) -> Option<f64> {
     let pct = window.used_percentage?;
     match window.resets_at {

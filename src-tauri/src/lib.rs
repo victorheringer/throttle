@@ -155,7 +155,6 @@ fn update_tray_status(app: AppHandle, tooltip: String, lines: Vec<String>) -> Re
 
 #[tauri::command]
 fn get_config_path(app: AppHandle) -> Result<String, String> {
-    // ensure the file exists before exposing its path
     config::load_config(&app)?;
     Ok(config::config_path(&app).to_string_lossy().to_string())
 }
